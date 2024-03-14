@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fibonacci Sequence in JSON</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Fibonacci Sequence in JSON</h2>
+
+<button onclick="generateFibonacci()">Generate Fibonacci Sequence</button>
+
+<p id="fibonacciOutput"></p>
+
+<script>
+function generateFibonacci() {
+    // Number of Fibonacci numbers to generate
+    const count = 10;
+
+    // Initialize Fibonacci sequence with first two numbers
+    var fibonacci = [0, 1];
+
+    // Generate Fibonacci sequence
+    for (let i = 2; i < count; i++) {
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    }
+
+    // Convert Fibonacci sequence to JSON string
+    var fibonacciJSON = JSON.stringify(fibonacci);
+
+    // Display Fibonacci sequence in JSON format
+    document.getElementById("fibonacciOutput").textContent = "Fibonacci Sequence: " + fibonacciJSON;
+}
+</script>
+
+</body>
+</html>
